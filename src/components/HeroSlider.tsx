@@ -21,31 +21,52 @@ const HeroSlider = ({
   slides = [
     {
       id: 1,
-      image:
-        "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&q=80",
-      title: "Engineering Excellence",
+      image: "/hero/Img53.jpg",
+      title: "Infrastructure Excellence",
       description:
-        "Innovative solutions for complex civil engineering challenges",
+        "Powering Australia's connectivity with high-quality NBN infrastructure",
       buttonText: "Our Services",
       buttonLink: "/services",
     },
     {
       id: 2,
-      image:
-        "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=80",
-      title: "Building the Future",
-      description: "Sustainable infrastructure development for tomorrow",
+      image: "/hero/Img57.jpg",
+      title: "Building Networks",
+      description: "Delivering high-speed broadband to communities across Australia",
       buttonText: "View Projects",
-      buttonLink: "/projects",
+      buttonLink: "/services",
     },
     {
       id: 3,
-      image:
-        "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1200&q=80",
-      title: "Expert Consultation",
-      description: "Professional guidance from industry-leading engineers",
+      image: "/hero/Img60.jpg",
+      title: "Expert Installation",
+      description: "Precision engineering and skilled technicians for seamless connectivity",
+      buttonText: "Our Expertise",
+      buttonLink: "/about-us",
+    },
+    {
+      id: 4,
+      image: "/hero/Img63.jpg",
+      title: "Innovative Solutions",
+      description: "Cutting-edge technology for modern communication infrastructure",
+      buttonText: "Learn More",
+      buttonLink: "/about-us",
+    },
+    {
+      id: 5,
+      image: "/hero/Img18.jpg",
+      title: "Network Planning",
+      description: "Strategic development of telecommunications infrastructure",
       buttonText: "Contact Us",
-      buttonLink: "/contact",
+      buttonLink: "/contact-us",
+    },
+    {
+      id: 6,
+      image: "/hero/Img20.jpg",
+      title: "Quality Assurance",
+      description: "Meeting the highest standards in broadband network deployment",
+      buttonText: "Our Values",
+      buttonLink: "/about-us",
     },
   ],
   autoPlayInterval = 5000,
@@ -96,7 +117,7 @@ const HeroSlider = ({
   }, [currentSlide, isAutoPlaying, autoPlayInterval, isMounted]);
 
   return (
-    <div className="relative w-full h-[600px] overflow-hidden bg-background">
+    <div className="relative w-full h-[600px] overflow-hidden bg-background dark:bg-gray-900">
       {/* Slides */}
       <div className="relative w-full h-full">
         {slides.map((slide, index) => (
@@ -115,7 +136,7 @@ const HeroSlider = ({
               style={{ backgroundImage: `url(${slide.image})` }}
             >
               {/* Overlay */}
-              <div className="absolute inset-0 bg-black/50" />
+              <div className="absolute inset-0 bg-black/60 dark:bg-black/70" />
             </div>
 
             {/* Content */}
@@ -126,7 +147,7 @@ const HeroSlider = ({
               <p className="text-lg md:text-xl text-white/90 mb-8">
                 {slide.description}
               </p>
-              <Button size="lg" className="font-medium" asChild>
+              <Button size="lg" className="font-medium bg-red-700 hover:bg-red-800 text-white" asChild>
                 <a href={slide.buttonLink}>{slide.buttonText}</a>
               </Button>
             </div>
@@ -138,7 +159,7 @@ const HeroSlider = ({
       <Button
         variant="ghost"
         size="icon"
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white rounded-full z-20"
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 dark:bg-black/40 dark:hover:bg-black/60 text-white rounded-full z-20"
         onClick={() => {
           pauseAutoPlay();
           prevSlide();
@@ -151,7 +172,7 @@ const HeroSlider = ({
       <Button
         variant="ghost"
         size="icon"
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white rounded-full z-20"
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 dark:bg-black/40 dark:hover:bg-black/60 text-white rounded-full z-20"
         onClick={() => {
           pauseAutoPlay();
           nextSlide();
