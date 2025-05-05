@@ -64,24 +64,24 @@ const ServicesGrid = ({
   subtitle = "Comprehensive Civil Engineering Solutions",
 }: ServicesGridProps) => {
   return (
-    <section className="py-16 px-4 bg-white">
+    <section className="py-16 px-4 bg-white dark:bg-gray-900">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-100 mb-4">
             {title}
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">{subtitle}</p>
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">{subtitle}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <Card
               key={index}
-              className="border border-gray-200 hover:shadow-lg transition-shadow duration-300 h-full"
+              className="border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow duration-300 h-full dark:bg-gray-800"
             >
               <CardContent className="p-6 flex flex-col h-full">
                 <div className="mb-4 flex justify-center">
-                  <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-red-100 dark:bg-red-900 flex items-center justify-center">
                     <img
                       src={service.icon}
                       alt={service.title}
@@ -89,16 +89,16 @@ const ServicesGrid = ({
                     />
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-3 text-center">
+                <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-3 text-center">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 mb-6 flex-grow text-center">
+                <p className="text-gray-600 dark:text-gray-300 mb-6 flex-grow text-center">
                   {service.description}
                 </p>
                 <div className="mt-auto text-center">
                   <Button
                     variant="outline"
-                    className="group text-blue-600 border-blue-600 hover:bg-blue-600 hover:text-white"
+                    className="group text-red-600 dark:text-red-400 border-red-600 dark:border-red-400 hover:bg-red-600 dark:hover:bg-red-700 hover:text-white"
                     asChild
                   >
                     <a href={service.link}>

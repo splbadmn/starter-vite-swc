@@ -87,11 +87,11 @@ const TestimonialSection = ({
   };
 
   return (
-    <section className="py-16 px-4 bg-slate-50">
+    <section className="py-16 px-4 bg-slate-50 dark:bg-gray-800">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold mb-2">What Our Clients Say</h2>
-          <div className="w-20 h-1 bg-red-700 mx-auto"></div>
+          <h2 className="text-3xl font-bold mb-2 dark:text-gray-100">What Our Clients Say</h2>
+          <div className="w-20 h-1 bg-red-700 dark:bg-red-600 mx-auto"></div>
         </div>
 
         <div className="relative">
@@ -102,18 +102,18 @@ const TestimonialSection = ({
             >
               {testimonials.map((testimonial) => (
                 <div key={testimonial.id} className="w-full flex-shrink-0 px-4">
-                  <Card className="bg-white shadow-lg">
+                  <Card className="bg-white dark:bg-gray-700 shadow-lg">
                     <CardContent className="p-8">
                       <div className="flex flex-col items-center text-center">
                         <div className="mb-6">
-                          <Avatar className="h-20 w-20 border-4 border-red-700/20">
+                          <Avatar className="h-20 w-20 border-4 border-red-700/20 dark:border-red-600/20">
                             {testimonial.avatar ? (
                               <AvatarImage
                                 src={testimonial.avatar}
                                 alt={testimonial.author}
                               />
                             ) : (
-                              <AvatarFallback className="bg-red-700/10 text-red-700 text-xl">
+                              <AvatarFallback className="bg-red-700/10 text-red-700 dark:bg-red-600/20 dark:text-red-500 text-xl">
                                 {testimonial.author
                                   .split(" ")
                                   .map((name) => name[0])
@@ -124,21 +124,21 @@ const TestimonialSection = ({
                         </div>
                         <div className="mb-6">
                           <svg
-                            className="h-8 w-8 text-red-700/40 mx-auto mb-2"
+                            className="h-8 w-8 text-red-700/40 dark:text-red-500/40 mx-auto mb-2"
                             fill="currentColor"
                             viewBox="0 0 24 24"
                           >
                             <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                           </svg>
-                          <p className="text-lg text-gray-700 italic">
+                          <p className="text-lg text-gray-700 dark:text-gray-200 italic">
                             {testimonial.quote}
                           </p>
                         </div>
                         <div>
-                          <h4 className="font-semibold text-lg">
+                          <h4 className="font-semibold text-lg dark:text-gray-100">
                             {testimonial.author}
                           </h4>
-                          <p className="text-gray-500">
+                          <p className="text-gray-500 dark:text-gray-400">
                             {testimonial.position}, {testimonial.company}
                           </p>
                         </div>
@@ -165,7 +165,7 @@ const TestimonialSection = ({
                 {testimonials.map((_, index) => (
                   <button
                     key={index}
-                    className={`h-2.5 rounded-full transition-all ${index === currentIndex ? "w-8 bg-red-700" : "w-2.5 bg-gray-300"}`}
+                    className={`h-2.5 rounded-full transition-all ${index === currentIndex ? "w-8 bg-red-700 dark:bg-red-600" : "w-2.5 bg-gray-300 dark:bg-gray-600"}`}
                     onClick={() => setCurrentIndex(index)}
                     aria-label={`Go to testimonial ${index + 1}`}
                   />

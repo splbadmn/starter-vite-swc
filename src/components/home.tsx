@@ -52,22 +52,22 @@ const HomePage = () => {
             variants={fadeIn}
             className="space-y-6"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-100">
               Welcome to Monorays Engineering
             </h2>
-            <div className="w-20 h-1 bg-primary"></div>
-            <p className="text-gray-600">
+            <div className="w-20 h-1 bg-red-600 dark:bg-red-500"></div>
+            <p className="text-gray-600 dark:text-gray-300">
               Monorays Engineering is a leading civil engineering firm providing
               comprehensive solutions for infrastructure development,
               construction management, and structural design. With over 25 years
               of experience, we deliver excellence in every project.
             </p>
-            <p className="text-gray-600">
+            <p className="text-gray-600 dark:text-gray-300">
               Our team of highly qualified engineers and professionals are
               committed to delivering innovative and sustainable solutions that
               meet the highest standards of quality and safety.
             </p>
-            <Button className="mt-4 bg-primary hover:bg-primary-800">
+            <Button className="mt-4 bg-red-600 hover:bg-red-700 dark:bg-red-700 dark:hover:bg-red-800">
               Learn More <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </motion.div>
@@ -86,7 +86,7 @@ const HomePage = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="absolute -bottom-6 -left-6 bg-primary text-white p-6 rounded-lg shadow-lg hidden md:block">
+            <div className="absolute -bottom-6 -left-6 bg-red-600 dark:bg-red-700 text-white p-6 rounded-lg shadow-lg hidden md:block">
               <p className="text-2xl font-bold">25+</p>
               <p>Years of Excellence</p>
             </div>
@@ -95,7 +95,7 @@ const HomePage = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="bg-gray-100 py-16">
+      <section className="bg-gray-100 dark:bg-gray-800 py-16">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {stats.map((stat, index) => (
@@ -105,12 +105,12 @@ const HomePage = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="p-6 bg-white rounded-lg shadow-md"
+                className="p-6 bg-white dark:bg-gray-700 rounded-lg shadow-md"
               >
-                <p className="text-3xl md:text-4xl font-bold text-primary">
+                <p className="text-3xl md:text-4xl font-bold text-red-600 dark:text-red-500">
                   {stat.value}
                 </p>
-                <p className="text-gray-600 mt-2">{stat.label}</p>
+                <p className="text-gray-600 dark:text-gray-300 mt-2">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -120,11 +120,11 @@ const HomePage = () => {
       {/* Services Section */}
       <section className="py-16 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-100">
             Our Services
           </h2>
-          <div className="w-20 h-1 bg-blue-600 mx-auto my-4"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <div className="w-20 h-1 bg-red-600 mx-auto my-4"></div>
+          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             We offer a comprehensive range of civil engineering services
             tailored to meet the unique needs of each project.
           </p>
@@ -134,7 +134,7 @@ const HomePage = () => {
       </section>
 
       {/* Features Section */}
-      <section className="bg-primary text-white py-16">
+      <section className="bg-red-600 dark:bg-red-700 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {features.map((feature, index) => (
@@ -163,11 +163,11 @@ const HomePage = () => {
       {/* Testimonials Section */}
       <section className="py-16 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-100">
             What Our Clients Say
           </h2>
-          <div className="w-20 h-1 bg-blue-600 mx-auto my-4"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <div className="w-20 h-1 bg-red-600 mx-auto my-4"></div>
+          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Don't just take our word for it. Here's what our clients have to say
             about our services.
           </p>
@@ -193,7 +193,7 @@ const HomePage = () => {
               help bring your vision to life.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button size="lg" className="bg-primary hover:bg-primary-800">
+              <Button size="lg" className="bg-red-600 hover:bg-red-700 dark:bg-red-700 dark:hover:bg-red-800">
                 Get a Quote
               </Button>
               <Button
@@ -211,41 +211,41 @@ const HomePage = () => {
       {/* Contact Info Section */}
       <section className="py-16 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <Card>
+          <Card className="dark:bg-gray-800 dark:border-gray-700">
             <CardContent className="flex flex-col items-center text-center p-6">
-              <div className="bg-blue-100 text-blue-600 p-4 rounded-full mb-4">
+              <div className="bg-red-100 text-red-600 p-4 rounded-full mb-4 dark:bg-red-900 dark:text-red-400">
                 <MapPin className="h-6 w-6" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Our Location</h3>
-              <p className="text-gray-600">
-                123 Engineering Way
+              <h3 className="text-xl font-semibold mb-2 dark:text-gray-100">Our Location</h3>
+              <p className="text-gray-600 dark:text-gray-300">
+                22 MAIDEN STREET GREENACRE
                 <br />
-                New York, NY 10001
+                NSW 2190, Australia
               </p>
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="dark:bg-gray-800 dark:border-gray-700">
             <CardContent className="flex flex-col items-center text-center p-6">
-              <div className="bg-blue-100 text-blue-600 p-4 rounded-full mb-4">
+              <div className="bg-red-100 text-red-600 p-4 rounded-full mb-4 dark:bg-red-900 dark:text-red-400">
                 <Phone className="h-6 w-6" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Contact Us</h3>
-              <p className="text-gray-600">
-                Phone: (123) 456-7890
+              <h3 className="text-xl font-semibold mb-2 dark:text-gray-100">Contact Us</h3>
+              <p className="text-gray-600 dark:text-gray-300">
+                Phone: 0433 362 733
                 <br />
                 Email: info@monorays.org
               </p>
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="dark:bg-gray-800 dark:border-gray-700">
             <CardContent className="flex flex-col items-center text-center p-6">
-              <div className="bg-blue-100 text-blue-600 p-4 rounded-full mb-4">
+              <div className="bg-red-100 text-red-600 p-4 rounded-full mb-4 dark:bg-red-900 dark:text-red-400">
                 <Clock className="h-6 w-6" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">Working Hours</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-semibold mb-2 dark:text-gray-100">Working Hours</h3>
+              <p className="text-gray-600 dark:text-gray-300">
                 Monday - Friday: 9AM - 5PM
                 <br />
                 Saturday - Sunday: Closed

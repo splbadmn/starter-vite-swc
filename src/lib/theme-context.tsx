@@ -14,20 +14,42 @@ const ThemeContext = createContext<ThemeContextType>({
 
 export const useTheme = () => useContext(ThemeContext);
 
-export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>('light');
+// Add a script to the head to avoid flash of unstyled content
+const initializeTheme = () => {
+  // This script runs immediately before React hydration to set the initial theme
+  const script = document.createElement('script');
+  script.innerHTML = `
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      
+      if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    })();
+  `;
+  document.head.appendChild(script);
+};
 
-  useEffect(() => {
-    // Check if user has a saved theme preference
+export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  // Initialize theme early to prevent flash
+  if (typeof window !== 'undefined') {
+    initializeTheme();
+  }
+  
+  // Get the initial theme state from localStorage or system preference
+  const getInitialTheme = (): Theme => {
+    if (typeof window === 'undefined') return 'light';
+    
     const savedTheme = localStorage.getItem('theme') as Theme | null;
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
-    if (savedTheme) {
-      setTheme(savedTheme);
-    } else if (prefersDark) {
-      setTheme('dark');
-    }
-  }, []);
+    return (savedTheme as Theme) || (prefersDark ? 'dark' : 'light');
+  };
+  
+  const [theme, setTheme] = useState<Theme>(getInitialTheme);
 
   useEffect(() => {
     // Update body class when theme changes
