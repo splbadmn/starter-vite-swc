@@ -18,7 +18,7 @@ const OurServices = () => {
 
   return (
     <MainLayout>
-      <div className="bg-white">
+      <div className="bg-white dark:bg-gray-900">
         {/* Hero Section */}
         <div className="relative bg-red-700 text-white py-20">
           <div
@@ -43,11 +43,11 @@ const OurServices = () => {
         <section className="py-16 px-4">
           <div className="container mx-auto max-w-7xl">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">
+              <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4">
                 Comprehensive Engineering Solutions
               </h2>
-              <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-              <p className="text-gray-600 max-w-3xl mx-auto">
+              <div className="w-20 h-1 bg-red-700 mx-auto mb-6"></div>
+              <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
                 At Monorays Engineering, we offer a wide range of civil
                 engineering services designed to meet the diverse needs of our
                 clients. From initial concept to final implementation, our team
@@ -61,15 +61,15 @@ const OurServices = () => {
         </section>
 
         {/* Why Choose Us */}
-        <section className="py-16 px-4 bg-gray-50">
+        <section className="py-16 px-4 bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto max-w-7xl">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-bold text-gray-800 mb-6">
+                <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-6">
                   Why Choose Our Services
                 </h2>
-                <div className="w-20 h-1 bg-red-700 mb-6"></div>
-                <p className="text-gray-600 mb-8">
+                <div className="w-20 h-1 bg-red-700 dark:bg-red-600 mb-6"></div>
+                <p className="text-gray-600 dark:text-gray-300 mb-8">
                   With over 25 years of experience in the industry, Monorays
                   Engineering has established a reputation for excellence,
                   innovation, and reliability. Our team of highly qualified
@@ -81,7 +81,7 @@ const OurServices = () => {
                   {benefits.map((benefit, index) => (
                     <li key={index} className="flex items-start">
                       <CheckCircle className="h-6 w-6 text-red-700 mr-2 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700">{benefit}</span>
+                      <span className="text-gray-700 dark:text-gray-300">{benefit}</span>
                     </li>
                   ))}
                 </ul>
@@ -110,11 +110,11 @@ const OurServices = () => {
         <section className="py-16 px-4">
           <div className="container mx-auto max-w-7xl">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">
+              <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4">
                 Our Service Process
               </h2>
-              <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-              <p className="text-gray-600 max-w-3xl mx-auto">
+              <div className="w-20 h-1 bg-red-700 mx-auto mb-6"></div>
+              <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
                 We follow a structured approach to ensure the successful
                 delivery of every project, from initial consultation to final
                 implementation.
@@ -122,60 +122,60 @@ const OurServices = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              <Card className="border-t-4 border-blue-600">
+              <Card className="border-t-4 border-red-700 dark:border-red-600 dark:bg-gray-800">
                 <CardContent className="p-6">
-                  <div className="bg-blue-100 text-blue-600 h-12 w-12 rounded-full flex items-center justify-center mb-4 text-xl font-bold">
+                  <div className="bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-500 h-12 w-12 rounded-full flex items-center justify-center mb-4 text-xl font-bold">
                     1
                   </div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">
+                  <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-2">
                     Consultation
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 dark:text-gray-300">
                     We begin with a thorough consultation to understand your
                     project requirements, objectives, and constraints.
                   </p>
                 </CardContent>
               </Card>
 
-              <Card className="border-t-4 border-blue-600">
+              <Card className="border-t-4 border-red-700 dark:border-red-600 dark:bg-gray-800">
                 <CardContent className="p-6">
-                  <div className="bg-blue-100 text-blue-600 h-12 w-12 rounded-full flex items-center justify-center mb-4 text-xl font-bold">
+                  <div className="bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-500 h-12 w-12 rounded-full flex items-center justify-center mb-4 text-xl font-bold">
                     2
                   </div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">
+                  <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-2">
                     Planning & Design
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 dark:text-gray-300">
                     Our team develops detailed plans and designs tailored to
                     your specific needs and project requirements.
                   </p>
                 </CardContent>
               </Card>
 
-              <Card className="border-t-4 border-blue-600">
+              <Card className="border-t-4 border-red-700 dark:border-red-600 dark:bg-gray-800">
                 <CardContent className="p-6">
-                  <div className="bg-blue-100 text-blue-600 h-12 w-12 rounded-full flex items-center justify-center mb-4 text-xl font-bold">
+                  <div className="bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-500 h-12 w-12 rounded-full flex items-center justify-center mb-4 text-xl font-bold">
                     3
                   </div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">
+                  <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-2">
                     Implementation
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 dark:text-gray-300">
                     We execute the project according to the approved plans,
                     ensuring adherence to quality standards and timelines.
                   </p>
                 </CardContent>
               </Card>
 
-              <Card className="border-t-4 border-blue-600">
+              <Card className="border-t-4 border-red-700 dark:border-red-600 dark:bg-gray-800">
                 <CardContent className="p-6">
-                  <div className="bg-blue-100 text-blue-600 h-12 w-12 rounded-full flex items-center justify-center mb-4 text-xl font-bold">
+                  <div className="bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-500 h-12 w-12 rounded-full flex items-center justify-center mb-4 text-xl font-bold">
                     4
                   </div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">
+                  <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 mb-2">
                     Quality Assurance
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 dark:text-gray-300">
                     We conduct thorough quality checks and provide ongoing
                     support to ensure the long-term success of your project.
                   </p>

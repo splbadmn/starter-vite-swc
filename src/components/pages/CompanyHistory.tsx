@@ -70,7 +70,7 @@ const CompanyHistory = () => {
 
   return (
     <MainLayout>
-      <div className="bg-white">
+      <div className="bg-white dark:bg-gray-900">
         {/* Hero Section */}
         <div className="relative bg-red-700 text-white py-20">
           <div
@@ -95,11 +95,11 @@ const CompanyHistory = () => {
         <section className="py-16 px-4">
           <div className="container mx-auto max-w-7xl">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">
+              <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4">
                 Our Journey
               </h2>
-              <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-              <p className="text-gray-600 max-w-3xl mx-auto">
+              <div className="w-20 h-1 bg-red-700 mx-auto mb-6"></div>
+              <p className="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
                 Since our founding in 1998, Monorays Engineering has grown from
                 a small consulting firm to a leading civil engineering company
                 with a global presence. Our journey has been marked by
@@ -115,7 +115,7 @@ const CompanyHistory = () => {
           <div className="container mx-auto max-w-7xl">
             <div className="relative">
               {/* Vertical Line */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-red-200 hidden md:block"></div>
+              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-red-200 dark:bg-red-800 hidden md:block"></div>
 
               {/* Milestones */}
               {milestones.map((milestone, index) => (
@@ -143,16 +143,16 @@ const CompanyHistory = () => {
                     <div className="hidden md:block md:w-2/12"></div>
 
                     {/* Content */}
-                    <div className="w-full md:w-5/12 bg-white p-6 rounded-lg shadow-md">
+                    <div className="w-full md:w-5/12 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
                       {/* Year Marker (Mobile) */}
                       <div className="bg-red-700 text-white rounded-full h-10 w-10 flex items-center justify-center mb-4 md:hidden">
                         {milestone.year}
                       </div>
 
-                      <h3 className="text-2xl font-bold text-gray-800 mb-2">
+                      <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-2">
                         {milestone.title}
                       </h3>
-                      <p className="text-gray-600">{milestone.description}</p>
+                      <p className="text-gray-600 dark:text-gray-300">{milestone.description}</p>
                     </div>
                   </div>
                 </div>
@@ -162,18 +162,18 @@ const CompanyHistory = () => {
         </section>
 
         {/* Vision for the Future */}
-        <section className="py-16 px-4 bg-gray-50">
+        <section className="py-16 px-4 bg-gray-50 dark:bg-gray-800">
           <div className="container mx-auto max-w-7xl">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">
+              <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4">
                 Looking to the Future
               </h2>
-              <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
+              <div className="w-20 h-1 bg-red-700 mx-auto mb-6"></div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div>
-                <p className="text-gray-600 mb-4">
+                <p className="text-gray-600 dark:text-gray-300 mb-4">
                   As we look to the future, Monorays Engineering remains
                   committed to pushing the boundaries of what's possible in
                   civil engineering. We are investing in advanced technologies,
@@ -181,7 +181,7 @@ const CompanyHistory = () => {
                   team to meet the evolving needs of our clients and
                   communities.
                 </p>
-                <p className="text-gray-600 mb-4">
+                <p className="text-gray-600 dark:text-gray-300 mb-4">
                   Our vision is to be at the forefront of infrastructure
                   innovation, contributing to the development of smarter, more
                   sustainable cities and communities around the world. We will
@@ -189,7 +189,7 @@ const CompanyHistory = () => {
                   challenges and opportunities in the ever-changing landscape of
                   civil engineering.
                 </p>
-                <p className="text-gray-600">
+                <p className="text-gray-600 dark:text-gray-300">
                   With a solid foundation built over 25 years, we are excited
                   about the next chapter in our company's history and the
                   positive impact we will continue to make through our work.
