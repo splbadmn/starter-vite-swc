@@ -60,53 +60,62 @@ const Header = () => {
   return (
     <>
       {/* Top Bar */}
-      <div className="hidden md:block bg-primary text-white py-2">
+      <div className="hidden md:block bg-white border-b text-gray-700 py-1.5">
         <div className="container mx-auto px-4 flex justify-between items-center">
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-6">
             <div className="flex items-center">
-              <Phone className="h-4 w-4 mr-2" />
-              <span className="text-sm">+1 (555) 123-4567</span>
+              <Phone className="h-4 w-4 mr-1 text-red-600" />
+              <span className="text-sm">Call Us 24/7</span>
+              <span className="text-sm ml-2 font-medium">0433 362 733</span>
             </div>
             <div className="flex items-center">
-              <Mail className="h-4 w-4 mr-2" />
-              <span className="text-sm">info@monorays.org</span>
+              <Mail className="h-4 w-4 mr-1 text-red-600" />
+              <span className="text-sm">Send Us Mail</span>
+              <a href="mailto:INFO@MONORAYS.ORG" className="text-sm ml-2 font-medium hover:text-red-600">INFO@MONORAYS.ORG</a>
             </div>
           </div>
           <div className="flex items-center">
-            <MapPin className="h-4 w-4 mr-2" />
-            <span className="text-sm">
-              123 Engineering Way, City, State 12345
+            <MapPin className="h-4 w-4 mr-1 text-red-600" />
+            <span className="text-sm">Our Location</span>
+            <span className="text-sm ml-2 font-medium">22 MAIDEN STREET GREENACRE NSW 2190</span>
+          </div>
+          <div className="flex items-center">
+            <span className="text-sm mr-2">Language</span>
+            <span className="text-sm font-medium flex items-center">
+              <img src="https://flagcdn.com/w20/gb.png" alt="English" className="h-4 mr-1" />
+              English
+              <ChevronDown className="h-3 w-3 ml-1" />
             </span>
           </div>
         </div>
       </div>
 
       {/* Header */}
-      <header className="bg-white shadow-md sticky top-0 z-50 border-t-4 border-primary">
+      <header className="bg-white shadow-sm sticky top-0 z-50">
         <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center py-4">
+          <div className="flex justify-between items-center py-3">
             {/* Logo */}
             <Link to="/" className="flex items-center">
-              <div className="text-2xl font-bold text-primary">Monorays</div>
-              <div className="text-sm text-gray-600 ml-2">
-                Engineering Solutions
+              <div className="flex flex-col">
+                <span className="text-2xl font-bold text-red-600">MONORAYS</span>
+                <span className="text-xs text-gray-600">AN EXPERT COMMUNITY COMPANY</span>
               </div>
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-6">
+            <nav className="hidden md:flex items-center">
               {navItems.map((item) => (
                 <div key={item.name} className="relative group">
                   {item.dropdown ? (
-                    <div className="flex items-center cursor-pointer">
+                    <div className="flex items-center cursor-pointer px-4 py-6">
                       <Link
                         to={item.path}
-                        className="text-gray-700 hover:text-primary font-medium"
+                        className="text-gray-800 hover:text-red-600 font-medium text-sm uppercase"
                       >
                         {item.name}
                       </Link>
                       <ChevronDown
-                        className="h-4 w-4 ml-1 text-gray-500 group-hover:text-primary"
+                        className="h-3 w-3 ml-1 text-gray-500 group-hover:text-red-600"
                         onClick={(e) => {
                           e.preventDefault();
                           toggleDropdown(item.name);
@@ -116,7 +125,7 @@ const Header = () => {
                   ) : (
                     <Link
                       to={item.path}
-                      className="text-gray-700 hover:text-primary font-medium"
+                      className="text-gray-800 hover:text-red-600 font-medium text-sm uppercase px-4 py-6"
                     >
                       {item.name}
                     </Link>
@@ -140,6 +149,16 @@ const Header = () => {
               ))}
             </nav>
 
+            {/* Get A Quote Button */}
+            <div className="hidden md:block">
+              <Link 
+                to="/contact-us" 
+                className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm uppercase font-medium tracking-wide"
+              >
+                GET A QUOTE →
+              </Link>
+            </div>
+
             {/* Mobile Menu Button */}
             <button
               className="md:hidden text-gray-700 focus:outline-none"
@@ -157,9 +176,9 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden bg-white border-t">
-            <div className="container mx-auto px-4 py-2">
+            <div className="container mx-auto px-4 py-3">
               {navItems.map((item) => (
-                <div key={item.name} className="py-2">
+                <div key={item.name} className="py-2 border-b border-gray-100">
                   {item.dropdown ? (
                     <div>
                       <div
@@ -168,7 +187,7 @@ const Header = () => {
                       >
                         <Link
                           to={item.path}
-                          className="text-gray-700 font-medium"
+                          className="text-gray-800 font-medium text-sm uppercase"
                         >
                           {item.name}
                         </Link>
@@ -178,12 +197,12 @@ const Header = () => {
                       </div>
 
                       {activeDropdown === item.name && (
-                        <div className="pl-4 border-l-2 border-gray-200 mt-1">
+                        <div className="pl-4 border-l-2 border-red-200 mt-1 mb-2">
                           {item.dropdown.map((dropdownItem) => (
                             <Link
                               key={dropdownItem.name}
                               to={dropdownItem.path}
-                              className="block py-2 text-sm text-gray-600 hover:text-primary"
+                              className="block py-2 text-sm text-gray-600 hover:text-red-600"
                               onClick={toggleMenu}
                             >
                               {dropdownItem.name}
@@ -195,7 +214,7 @@ const Header = () => {
                   ) : (
                     <Link
                       to={item.path}
-                      className="block py-2 text-gray-700 font-medium hover:text-primary"
+                      className="block py-2 text-gray-800 font-medium text-sm uppercase hover:text-red-600"
                       onClick={toggleMenu}
                     >
                       {item.name}
