@@ -66,7 +66,7 @@ const Header = () => {
   return (
     <>
       {/* Top Bar */}
-      <div className="hidden md:block bg-white border-b text-gray-700 py-1.5 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300">
+      <div className="hidden md:block bg-white border-b text-gray-700 py-3 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300">
         <div className="container mx-auto px-4 flex justify-between items-center">
           <div className="flex items-center space-x-6">
             <div className="flex items-center">

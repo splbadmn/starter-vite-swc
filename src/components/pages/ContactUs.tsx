@@ -9,7 +9,7 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 const ContactUs = () => {
   return (
     <MainLayout>
-      <div className="bg-white">
+      <div className="bg-white dark:bg-gray-900">
         {/* Hero Section */}
         <div className="relative bg-red-700 text-white py-20">
           <div
@@ -38,7 +38,7 @@ const ContactUs = () => {
                   Send Us a Message
                 </h2>
                 <div className="w-20 h-1 bg-blue-600 mb-6"></div>
-                <p className="text-gray-600 mb-8">
+                <p className="text-gray-600 dark:text-gray-400 mb-8">
                   Fill out the form below and our team will get back to you as
                   soon as possible.
                 </p>
@@ -48,7 +48,7 @@ const ContactUs = () => {
                     <div>
                       <label
                         htmlFor="name"
-                        className="block text-sm font-medium text-gray-700 mb-1"
+                        className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
                       >
                         Full Name
                       </label>
@@ -61,7 +61,7 @@ const ContactUs = () => {
                     <div>
                       <label
                         htmlFor="email"
-                        className="block text-sm font-medium text-gray-700 mb-1"
+                        className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
                       >
                         Email Address
                       </label>
@@ -78,7 +78,7 @@ const ContactUs = () => {
                     <div>
                       <label
                         htmlFor="phone"
-                        className="block text-sm font-medium text-gray-700 mb-1"
+                        className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
                       >
                         Phone Number
                       </label>
@@ -91,7 +91,7 @@ const ContactUs = () => {
                     <div>
                       <label
                         htmlFor="subject"
-                        className="block text-sm font-medium text-gray-700 mb-1"
+                        className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
                       >
                         Subject
                       </label>
@@ -134,7 +134,7 @@ const ContactUs = () => {
                   Contact Information
                 </h2>
                 <div className="w-20 h-1 bg-blue-600 mb-6"></div>
-                <p className="text-gray-600 mb-8">
+                <p className="text-gray-600 dark:text-gray-400 mb-8">
                   Feel free to reach out to us using any of the contact methods
                   below.
                 </p>
@@ -142,19 +142,19 @@ const ContactUs = () => {
                 <div className="space-y-6">
                   <Card>
                     <CardContent className="flex items-start p-6">
-                      <div className="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
+                      <div className="bg-red-100 text-red-600 p-3 rounded-full mr-4 dark:bg-red-900 dark:text-red-400">
                         <MapPin className="h-6 w-6" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-lg mb-1">
+                        <h3 className="font-semibold text-lg mb-1 dark:text-gray-200">
                           Our Location
                         </h3>
-                        <p className="text-gray-600">
-                          123 Engineering Way
+                        <p className="text-gray-600 dark:text-gray-400">
+                          22 MAIDEN STREET GREENACRE
                           <br />
-                          New York, NY 10001
+                          NSW 2190
                           <br />
-                          United States
+                          Australia
                         </p>
                       </div>
                     </CardContent>
@@ -162,17 +162,15 @@ const ContactUs = () => {
 
                   <Card>
                     <CardContent className="flex items-start p-6">
-                      <div className="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
+                      <div className="bg-red-100 text-red-600 p-3 rounded-full mr-4 dark:bg-red-900 dark:text-red-400">
                         <Phone className="h-6 w-6" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-lg mb-1">Phone</h3>
-                        <p className="text-gray-600">
-                          Main: (123) 456-7890
+                        <h3 className="font-semibold text-lg mb-1 dark:text-gray-200">Phone</h3>
+                        <p className="text-gray-600 dark:text-gray-400">
+                          Main: 0433 362 733
                           <br />
-                          Toll-free: 1-800-123-4567
-                          <br />
-                          Fax: (123) 456-7891
+                          Secondary: 0434 934 118
                         </p>
                       </div>
                     </CardContent>
@@ -180,17 +178,17 @@ const ContactUs = () => {
 
                   <Card>
                     <CardContent className="flex items-start p-6">
-                      <div className="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
+                      <div className="bg-red-100 text-red-600 p-3 rounded-full mr-4 dark:bg-red-900 dark:text-red-400">
                         <Mail className="h-6 w-6" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-lg mb-1">Email</h3>
-                        <p className="text-gray-600">
-                          General Inquiries: info@monorays.org
+                        <h3 className="font-semibold text-lg mb-1 dark:text-gray-200">Email</h3>
+                        <p className="text-gray-600 dark:text-gray-400">
+                          <a href="mailto:kalai@monorays.org" className="hover:text-red-600 dark:hover:text-red-400">kalai@monorays.org</a>
                           <br />
-                          Support: support@monorays.org
+                          <a href="mailto:niro@monorays.org" className="hover:text-red-600 dark:hover:text-red-400">niro@monorays.org</a>
                           <br />
-                          Careers: careers@monorays.org
+                          <a href="mailto:info@monorays.org" className="hover:text-red-600 dark:hover:text-red-400">info@monorays.org</a>
                         </p>
                       </div>
                     </CardContent>
@@ -211,6 +209,20 @@ const ContactUs = () => {
                           Saturday - Sunday: Closed
                           <br />
                           Holidays: Closed
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card>
+                    <CardContent className="flex items-start p-6">
+                      <div className="bg-red-100 text-red-600 p-3 rounded-full mr-4 dark:bg-red-900 dark:text-red-400">
+                        <Clock className="h-6 w-6" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-lg mb-1 dark:text-gray-200">Website</h3>
+                        <p className="text-gray-600 dark:text-gray-400">
+                          <a href="https://www.monorays.org" className="hover:text-red-600 dark:hover:text-red-400" target="_blank" rel="noopener noreferrer">www.monorays.org</a>
                         </p>
                       </div>
                     </CardContent>
