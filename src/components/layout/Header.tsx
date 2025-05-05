@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, ChevronDown, Phone, Mail, MapPin } from "lucide-react";
+import { Menu, X, ChevronDown, Phone, Mail, MapPin, Moon, Sun } from "lucide-react";
 import { themeColors } from "@/lib/theme";
+import { useTheme } from "../../lib/theme-context";
+
+// Import logo images
+import darkLogo from "/monorays_dark_web.png";
+import lightLogo from "/monorays_lite_web.png";
 
 interface NavItem {
   name: string;
@@ -12,6 +17,7 @@ interface NavItem {
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const { theme, toggleTheme } = useTheme();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -60,46 +66,62 @@ const Header = () => {
   return (
     <>
       {/* Top Bar */}
-      <div className="hidden md:block bg-white border-b text-gray-700 py-1.5">
+      <div className="hidden md:block bg-white border-b text-gray-700 py-1.5 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300">
         <div className="container mx-auto px-4 flex justify-between items-center">
           <div className="flex items-center space-x-6">
             <div className="flex items-center">
-              <Phone className="h-4 w-4 mr-1 text-red-600" />
+              <Phone className="h-4 w-4 mr-1 text-red-600 dark:text-red-500" />
               <span className="text-sm">Call Us 24/7</span>
               <span className="text-sm ml-2 font-medium">0433 362 733</span>
             </div>
             <div className="flex items-center">
-              <Mail className="h-4 w-4 mr-1 text-red-600" />
+              <Mail className="h-4 w-4 mr-1 text-red-600 dark:text-red-500" />
               <span className="text-sm">Send Us Mail</span>
-              <a href="mailto:INFO@MONORAYS.ORG" className="text-sm ml-2 font-medium hover:text-red-600">INFO@MONORAYS.ORG</a>
+              <a href="mailto:INFO@MONORAYS.ORG" className="text-sm ml-2 font-medium hover:text-red-600 dark:hover:text-red-400">INFO@MONORAYS.ORG</a>
             </div>
           </div>
           <div className="flex items-center">
-            <MapPin className="h-4 w-4 mr-1 text-red-600" />
+            <MapPin className="h-4 w-4 mr-1 text-red-600 dark:text-red-500" />
             <span className="text-sm">Our Location</span>
             <span className="text-sm ml-2 font-medium">22 MAIDEN STREET GREENACRE NSW 2190</span>
           </div>
-          <div className="flex items-center">
-            <span className="text-sm mr-2">Language</span>
-            <span className="text-sm font-medium flex items-center">
-              <img src="https://flagcdn.com/w20/gb.png" alt="English" className="h-4 mr-1" />
-              English
-              <ChevronDown className="h-3 w-3 ml-1" />
-            </span>
+          <div className="flex items-center space-x-4">
+            <div className="flex items-center">
+              <span className="text-sm mr-2">Language</span>
+              <span className="text-sm font-medium flex items-center">
+                <img src="https://flagcdn.com/w20/gb.png" alt="English" className="h-4 mr-1" />
+                English
+                <ChevronDown className="h-3 w-3 ml-1" />
+              </span>
+            </div>
+            
+            {/* Theme Toggle Button */}
+            <button
+              onClick={toggleTheme}
+              className="p-1 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none"
+              aria-label="Toggle theme"
+            >
+              {theme === 'dark' ? (
+                <Sun className="h-5 w-5 text-yellow-500" />
+              ) : (
+                <Moon className="h-5 w-5 text-gray-600" />
+              )}
+            </button>
           </div>
         </div>
       </div>
 
       {/* Header */}
-      <header className="bg-white shadow-sm sticky top-0 z-50">
+      <header className="bg-white shadow-sm sticky top-0 z-50 dark:bg-gray-900 dark:shadow-gray-800/20">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center py-3">
             {/* Logo */}
             <Link to="/" className="flex items-center">
-              <div className="flex flex-col">
-                <span className="text-2xl font-bold text-red-600">MONORAYS</span>
-                <span className="text-xs text-gray-600">AN EXPERT COMMUNITY COMPANY</span>
-              </div>
+              <img
+                src={theme === 'dark' ? darkLogo : lightLogo}
+                alt="Monorays"
+                className="h-12"
+              />
             </Link>
 
             {/* Desktop Navigation */}
@@ -110,12 +132,12 @@ const Header = () => {
                     <div className="flex items-center cursor-pointer px-4 py-6">
                       <Link
                         to={item.path}
-                        className="text-gray-800 hover:text-red-600 font-medium text-sm uppercase"
+                        className="text-gray-800 hover:text-red-600 font-medium text-sm uppercase dark:text-gray-200 dark:hover:text-red-400"
                       >
                         {item.name}
                       </Link>
                       <ChevronDown
-                        className="h-3 w-3 ml-1 text-gray-500 group-hover:text-red-600"
+                        className="h-3 w-3 ml-1 text-gray-500 group-hover:text-red-600 dark:text-gray-400 dark:group-hover:text-red-400"
                         onClick={(e) => {
                           e.preventDefault();
                           toggleDropdown(item.name);
@@ -125,7 +147,7 @@ const Header = () => {
                   ) : (
                     <Link
                       to={item.path}
-                      className="text-gray-800 hover:text-red-600 font-medium text-sm uppercase px-4 py-6"
+                      className="text-gray-800 hover:text-red-600 font-medium text-sm uppercase px-4 py-6 dark:text-gray-200 dark:hover:text-red-400"
                     >
                       {item.name}
                     </Link>
@@ -133,12 +155,12 @@ const Header = () => {
 
                   {/* Dropdown Menu */}
                   {item.dropdown && (
-                    <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md overflow-hidden transform opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition duration-200 ease-in-out z-50">
+                    <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md overflow-hidden transform opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition duration-200 ease-in-out z-50 dark:bg-gray-800 dark:shadow-gray-700/30">
                       {item.dropdown.map((dropdownItem) => (
                         <Link
                           key={dropdownItem.name}
                           to={dropdownItem.path}
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-primary"
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-red-600 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-red-400"
                         >
                           {dropdownItem.name}
                         </Link>
@@ -153,7 +175,7 @@ const Header = () => {
             <div className="hidden md:block">
               <Link 
                 to="/contact-us" 
-                className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm uppercase font-medium tracking-wide"
+                className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded text-sm uppercase font-medium tracking-wide dark:bg-red-700 dark:hover:bg-red-800"
               >
                 GET A QUOTE →
               </Link>
@@ -175,10 +197,10 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white border-t">
+          <div className="md:hidden bg-white border-t dark:bg-gray-900 dark:border-gray-800">
             <div className="container mx-auto px-4 py-3">
               {navItems.map((item) => (
-                <div key={item.name} className="py-2 border-b border-gray-100">
+                <div key={item.name} className="py-2 border-b border-gray-100 dark:border-gray-800">
                   {item.dropdown ? (
                     <div>
                       <div
@@ -187,7 +209,7 @@ const Header = () => {
                       >
                         <Link
                           to={item.path}
-                          className="text-gray-800 font-medium text-sm uppercase"
+                          className="text-gray-800 font-medium text-sm uppercase dark:text-gray-200"
                         >
                           {item.name}
                         </Link>
@@ -197,12 +219,12 @@ const Header = () => {
                       </div>
 
                       {activeDropdown === item.name && (
-                        <div className="pl-4 border-l-2 border-red-200 mt-1 mb-2">
+                        <div className="pl-4 border-l-2 border-red-200 mt-1 mb-2 dark:border-red-800">
                           {item.dropdown.map((dropdownItem) => (
                             <Link
                               key={dropdownItem.name}
                               to={dropdownItem.path}
-                              className="block py-2 text-sm text-gray-600 hover:text-red-600"
+                              className="block py-2 text-sm text-gray-600 hover:text-red-600 dark:text-gray-400 dark:hover:text-red-400"
                               onClick={toggleMenu}
                             >
                               {dropdownItem.name}
@@ -214,7 +236,7 @@ const Header = () => {
                   ) : (
                     <Link
                       to={item.path}
-                      className="block py-2 text-gray-800 font-medium text-sm uppercase hover:text-red-600"
+                      className="block py-2 text-gray-800 font-medium text-sm uppercase hover:text-red-600 dark:text-gray-200 dark:hover:text-red-400"
                       onClick={toggleMenu}
                     >
                       {item.name}
