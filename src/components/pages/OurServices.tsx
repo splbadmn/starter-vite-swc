@@ -1,6 +1,7 @@
 import React from "react";
 import MainLayout from "../layout/MainLayout";
 import ServicesGrid from "../ServicesGrid";
+import ProjectGallery from "../ProjectGallery";
 import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
 import { CheckCircle } from "lucide-react";
@@ -184,6 +185,12 @@ const OurServices = () => {
             </div>
           </div>
         </section>
+
+        {/* Project Gallery */}
+        <ProjectGallery 
+          title="Our Recent Projects" 
+          subtitle="Explore our telecommunications infrastructure projects across Australia, showcasing our expertise in NBN deployment and network installations"
+        />
 
         {/* CTA Section */}
         <section className="py-16 px-4 bg-red-700 text-white">

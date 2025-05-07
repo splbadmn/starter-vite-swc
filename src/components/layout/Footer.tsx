@@ -5,7 +5,7 @@ import { useTheme } from "../../lib/theme-context";
 
 // Import logo images
 import darkLogo from "/monorays_dark_web.png";
-import lightLogo from "/monorays_lite_web.png";
+import lightLogo from "/monorays_dark_web.png";
 
 const Footer = () => {
   const { theme } = useTheme();
@@ -133,7 +133,7 @@ const Footer = () => {
       {/* Copyright */}
       <div className="bg-gray-800 py-4 dark:bg-black">
         <div className="container mx-auto px-4 text-center text-gray-400 text-sm">
-          © {new Date().getFullYear()} Monorays Engineering Solutions. All
+          Developed by <a href="https://www.spirelab.net" className="hover:text-white transition-colors duration-300">Spirelab Solutions Ltd.</a> | © {new Date().getFullYear()} Monorays Pte Ltd. All
           rights reserved.
         </div>
       </div>
