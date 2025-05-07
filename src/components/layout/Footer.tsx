@@ -28,21 +28,21 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white dark:bg-gray-950">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
-          <div>
+          <div className="mb-8 sm:mb-0">
             <div className="mb-4">
               <img 
                 src={theme === 'dark' ? darkLogo : lightLogo} 
                 alt="Monorays" 
-                className="h-12 mb-4" 
+                className="h-10 sm:h-12 mb-4" 
               />
             </div>
-            <p className="text-gray-400 mb-6">
+            <p className="text-gray-400 mb-4 text-sm sm:text-base max-w-xs">
               A leading developer of A-grade commercial, industrial and residential 
               projects in Australia. Since its foundation the company.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex flex-wrap gap-2">
               {/* Social Media Icons */}
               <a href="#" className="text-gray-400 hover:text-white bg-gray-800 p-2 rounded-full hover:bg-red-600 transition-colors duration-300 dark:bg-gray-800">
                 <Facebook className="h-4 w-4" />
@@ -63,14 +63,14 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
+          <div className="mb-8 sm:mb-0">
+            <h3 className="text-lg font-semibold mb-3 text-white">Quick Links</h3>
+            <ul className="space-y-2 text-sm sm:text-base">
               {navItems.map((item) => (
                 <li key={item.name}>
                   <Link
                     to={item.path}
-                    className="text-gray-400 hover:text-white"
+                    className="text-gray-400 hover:text-white inline-block py-1"
                   >
                     {item.name}
                   </Link>
@@ -80,14 +80,14 @@ const Footer = () => {
           </div>
 
           {/* Services */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Our Services</h3>
-            <ul className="space-y-2">
+          <div className="mb-8 sm:mb-0">
+            <h3 className="text-lg font-semibold mb-3 text-white">Our Services</h3>
+            <ul className="space-y-2 text-sm sm:text-base">
               {services.map((service, index) => (
                 <li key={index}>
                   <Link
                     to={service.path}
-                    className="text-gray-400 hover:text-white"
+                    className="text-gray-400 hover:text-white inline-block py-1"
                   >
                     {service.name}
                   </Link>
@@ -98,32 +98,32 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">Contact Company</h3>
-            <ul className="space-y-3">
+            <h3 className="text-lg font-semibold mb-3 text-white">Contact Company</h3>
+            <ul className="space-y-3 text-sm sm:text-base">
               <li className="flex items-center">
-                <Phone className="h-5 w-5 mr-2 text-red-500" />
+                <Phone className="h-4 w-4 sm:h-5 sm:w-5 mr-2 text-red-500 flex-shrink-0" />
                 <div className="flex flex-col">
-                  <span className="text-gray-400">0433362733</span>
-                  <span className="text-gray-400">0434934118</span>
+                  <a href="tel:0433362733" className="text-gray-400 hover:text-white">0433 362 733</a>
+                  <a href="tel:0434934118" className="text-gray-400 hover:text-white">0434 934 118</a>
                 </div>
               </li>
               <li className="flex items-start">
-                <Mail className="h-5 w-5 mr-2 text-red-500 mt-1" />
+                <Mail className="h-4 w-4 sm:h-5 sm:w-5 mr-2 text-red-500 mt-1 flex-shrink-0" />
                 <div className="flex flex-col">
-                  <a href="mailto:kalai@monorays.org" className="text-gray-400 hover:text-white">kalai@monorays.org</a>
-                  <a href="mailto:niro@monorays.org" className="text-gray-400 hover:text-white">niro@monorays.org</a>
+                  <a href="mailto:kalai@monorays.org" className="text-gray-400 hover:text-white break-all">kalai@monorays.org</a>
+                  <a href="mailto:niro@monorays.org" className="text-gray-400 hover:text-white break-all">niro@monorays.org</a>
                 </div>
               </li>
               <li className="flex items-start">
-                <MapPin className="h-5 w-5 mr-2 text-red-500 mt-1" />
+                <MapPin className="h-4 w-4 sm:h-5 sm:w-5 mr-2 text-red-500 mt-1 flex-shrink-0" />
                 <span className="text-gray-400">
                   22 MAIDEN STREET GREENACRE<br />
                   NSW 2190, Australia
                 </span>
               </li>
               <li className="flex items-center">
-                <Globe className="h-5 w-5 mr-2 text-red-500" />
-                <a href="https://www.monorays.org" className="text-gray-400 hover:text-white">www.monorays.org</a>
+                <Globe className="h-4 w-4 sm:h-5 sm:w-5 mr-2 text-red-500 flex-shrink-0" />
+                <a href="https://www.monorays.org" className="text-gray-400 hover:text-white break-all">www.monorays.org</a>
               </li>
             </ul>
           </div>
@@ -133,8 +133,11 @@ const Footer = () => {
       {/* Copyright */}
       <div className="bg-gray-800 py-4 dark:bg-black">
         <div className="container mx-auto px-4 text-center text-gray-400 text-sm">
-          Developed by <a href="https://www.spirelab.net" className="hover:text-white transition-colors duration-300">Spirelab Solutions Ltd.</a> | © {new Date().getFullYear()} Monorays Pte Ltd. All
-          rights reserved.
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-1 sm:gap-2">
+            <span>Developed by <a href="https://www.spirelab.net" className="hover:text-white transition-colors duration-300">Spirelab Solutions Ltd.</a></span> 
+            <span className="hidden sm:inline">|</span> 
+            <span>© {new Date().getFullYear()} Monorays Pte Ltd. All rights reserved.</span>
+          </div>
         </div>
       </div>
     </footer>

@@ -22,5 +22,11 @@ export default defineConfig({
   server: {
     // @ts-ignore
     allowedHosts: true,
+    port: 5895,
+    strictPort: true // Ensures Vite doesn't try another port if 5895 is taken
+  },
+  preview: {
+    port: 5895,
+    strictPort: true
   }
 });
